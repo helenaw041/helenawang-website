@@ -1,20 +1,32 @@
  body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  font-family: 'Inter', sans-serif;
+  background-color: #f2ebdf;
   color: #333;
   margin: 0;
   padding: 0;
 }
 
 header {
-  background-color: #007acc;
+  background-color: #3b2c1a;
   color: white;
   padding: 1em;
   text-align: center;
 }
 
+.nav-box {
+  display: inline-block;
+  background-color: #805625;
+  color: white;
+  padding: 0.5em 1.5em;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 1.0em;
+  font-weight: bold;
+  border: 3px solid #1b331b;
+}
+
 nav {
-  background-color: #005f99;
+  background-color: #f2ebdf;
   text-align: center;
   padding: 0.5em;
 }
@@ -32,6 +44,27 @@ nav a:hover {
 
 main {
   padding: 2em;
+}
+
+.typewriter {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.5em;
+  white-space: nowrap;         /* Prevent line wrap */
+  overflow: hidden;            /* Hide overflowing text */
+  border-right: 4px solid black; /* Cursor effect */
+  width: 20ch;                 /* Width = number of characters */
+  animation: typing 4s steps(20) forwards, blink 0.75s step-end 5;
+  /* Adjust steps() to match text length */
+  margin: 0 auto;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 20ch; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
 }
 
 footer {
