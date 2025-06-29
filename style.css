@@ -51,7 +51,7 @@ main {
   font-size: 1.5em;
   white-space: nowrap;         /* Prevent line wrap */
   overflow: hidden;            /* Hide overflowing text */
-  border-right: 4px solid black; /* Cursor effect */
+  border-right: 4px solid #d1978c; /* Cursor effect */
   width: 20ch;                 /* Width = number of characters */
   animation: typing 4s steps(20) forwards, blink 0.75s step-end 5;
   /* Adjust steps() to match text length */
