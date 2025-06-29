@@ -9,10 +9,21 @@
 header {
   background-color: #3b2c1a;
   color: white;
-  padding: 1em;
+  padding: 1em 1em 0.5em 1em;
   text-align: center;
 }
 
+.header-box {
+  display: inline-block;
+  background-color: #3b2c1a;
+  color: #D9E1F2;
+  padding: 1em 2em 0.5em 2em;
+  border-radius: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  font-family: 'Space Mono', monospace;
+  text-align: left;
+  margin: 0 auto;
+}
 .nav-box {
   display: inline-block;
   background-color: #805625;
@@ -48,23 +59,69 @@ main {
 
 .typewriter {
   font-family: 'Space Mono', monospace;
-  font-size: 1.5em;
-  white-space: nowrap;         /* Prevent line wrap */
-  overflow: hidden;            /* Hide overflowing text */
-  border-right: 4px solid #d1978c; /* Cursor effect */
-  width: 20ch;                 /* Width = number of characters */
-  animation: typing 4s steps(20) forwards, blink 0.75s step-end 5;
-  /* Adjust steps() to match text length */
+  white-space: nowrap; /*Prevent line wrap*/
+  overflow: hidden; /*Hide overflowing text*/
+  border-right: 4px solid #d1978c; /*Cursor*/
+  width: 0ch;
   margin: 0 auto;
 }
 
-@keyframes typing {
-  from { width: 0; }
-  to { width: 20ch; }
+
+.typewriter.main {
+  font-size: 1.5em;
+  animation: typing-main 4s steps(20) forwards, blink 0.75s step-end 5, hide-cursor 0s linear 4s forwards;
+  animation-fill-mode: forwards;
+  margin: 0 auto;
+  /* Adjust steps() to match character count */
+}
+
+/* Subheader */
+.typewriter.sub {
+  font-size: 0.6em;
+  margin-top: 0.3em;
+  position: relative;
+  left: 10.5em;
+  margin-bottom: 0;    /* Remove bottom margin */
+  padding-bottom: 0;   /* Remove bottom padding */
+  animation: typing-sub 3s steps(16) forwards;
+  animation-delay: 4s; /* starts after main finishes */
+  animation-fill-mode: forwards;
+  border-right-color: transparent; /* hide cursor until animation starts */
+}
+
+/* Sub cursor appears when typing starts */
+.typewriter.sub::after {
+  content: '';
+  border-right: 3px solid #d1978c;
+  animation: blink-sub 0.75s step-end infinite;
+  animation-delay: 4s;
+  animation-fill-mode: forwards;
+  display: inline-block;
+  width: 0;
+  height: 1em;
+  vertical-align: bottom;
+  margin-left: -3px;
+}
+
+/* Animations */
+@keyframes typing-main {
+  from { width: 0ch; }
+  to { width: 20ch; } /* adjust for actual character count */
+}
+
+@keyframes typing-sub {
+  from { width: 0ch; }
+  to { width: 16ch; } /* adjust for "by pickaxe" */
 }
 
 @keyframes blink {
   50% { border-color: transparent; }
+}
+
+@keyframes hide-cursor {
+  to {
+    border-color: transparent;
+  }
 }
 
 footer {
